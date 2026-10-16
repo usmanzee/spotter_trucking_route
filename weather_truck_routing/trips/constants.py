@@ -1,0 +1,37 @@
+from enum import StrEnum
+
+
+class RiskLevel(StrEnum):
+    LOW = "low"
+    MODERATE = "moderate"
+    HIGH = "high"
+    SEVERE = "severe"
+    NO_TRAVEL = "no_travel"
+    UNKNOWN = "unknown"
+
+
+RISK_SCORES: dict[RiskLevel, int] = {
+    RiskLevel.LOW: 0,
+    RiskLevel.MODERATE: 1,
+    RiskLevel.HIGH: 2,
+    RiskLevel.SEVERE: 3,
+    RiskLevel.NO_TRAVEL: 4,
+}
+
+WIND_MODERATE_MPH = 25.0
+WIND_HIGH_MPH = 35.0
+WIND_SEVERE_MPH = 45.0
+WIND_NO_TRAVEL_MPH = 55.0
+
+RAIN_MODERATE_IN_PER_HR = 0.10
+RAIN_HIGH_IN_PER_HR = 0.25
+RAIN_SEVERE_IN_PER_HR = 0.50
+RAIN_NO_TRAVEL_ABOVE_IN_PER_HR = 1.00
+
+SNOW_MODERATE_IN_PER_HR = 0.5
+SNOW_HIGH_IN_PER_HR = 1.0
+SNOW_SEVERE_IN_PER_HR = 2.0
+SNOW_NO_TRAVEL_ABOVE_IN_PER_HR = 3.0
+
+HEAVY_LOAD_NO_TRAVEL_LB = 30_000.0
+VERY_HEAVY_LOAD_SEVERE_LB = 40_000.0
